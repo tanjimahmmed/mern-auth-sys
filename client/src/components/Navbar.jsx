@@ -12,7 +12,7 @@ const {userData, backendUrl, setUserData, setIsLoggedin} = useContext(AppContent
 const sendVerificationOtp = async () => {
   try {
     axios.defaults.withCredentials = true;
-    const {data} = await axios.get(backendUrl + '/api/auth/send-verify-otp')
+    const {data} = await axios.post(backendUrl + '/api/auth/send-verify-otp')
 
     if(data.success){
       navigate('/email-verify')
